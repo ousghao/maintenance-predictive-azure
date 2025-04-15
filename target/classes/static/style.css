@@ -1,0 +1,116 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2em;
+    color: #005a9c;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #777;
+    font-style: italic;
+}
+
+.author {
+    margin-top: 5px;
+    color: #333;
+}
+
+h2 {
+    color: #005a9c;
+    margin-top: 30px;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.main-image {
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.charts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.chart-block {
+    flex: 1 1 45%;
+    text-align: center;
+}
+
+figcaption {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 5px;
+}
+
+ul, ol {
+    padding-left: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.status {
+    margin-top: 15px;
+    color: green;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.form-section {
+    margin-top: 40px;
+}

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,11 +7,17 @@
 </head>
 <body>
     <div class="container">
-        <h1>Projet de Maintenance Prédictive 🔧🤖</h1>
-        <p>Amélioration de la fiabilité des machines industrielles grâce à l'IA.</p>
+        <header>
+            <h1>Projet de Maintenance Prédictive 🔧🤖</h1>
+            <p class="subtitle">Amélioration de la fiabilité des machines industrielles grâce à l'IA</p>
+            <p class="author">Réalisé par : <strong>Oussama Ghaouti</strong></p>
+        </header>
 
-        <img src="images/aaz.png" alt="Robot industriel" class="robot-image">
-        <figcaption>Illustration : Machine industrielle surveillée par des capteurs IoT pour la maintenance prédictive.</figcaption>
+        <section class="image-block">
+            <img src="images/aaz.png" alt="Robot industriel" class="main-image">
+            <figcaption>Illustration : Machine industrielle surveillée par des capteurs IoT pour la maintenance prédictive.</figcaption>
+        </section>
+
         <section class="description">
             <h2>Problématique du Projet</h2>
             <p>Les arrêts imprévus des équipements industriels peuvent coûter des millions d'euros par an.
@@ -27,10 +32,17 @@
             </ul>
 
             <h2>Visualisations</h2>
-            <img src="images/pie_chart.png" alt="Répartition des défauts">
-            <figcaption>Illustration : Répartition des défauts</figcaption>
-            <img src="images/accuracy_progression.png" alt="Progression de la précision">
-            <figcaption>Illustration : Progression de la précision</figcaption>
+            <div class="charts">
+                <div class="chart-block">
+                    <img src="images/pie_chart.png" alt="Répartition des défauts">
+                    <figcaption>Répartition des défauts</figcaption>
+                </div>
+                <div class="chart-block">
+                    <img src="images/accuracy_progression.png" alt="Progression de la précision">
+                    <figcaption>Progression de la précision</figcaption>
+                </div>
+            </div>
+
             <h2>Étapes du Projet</h2>
             <ol>
                 <li>Analyse initiale et détection d'un déséquilibre dans les classes.</li>
@@ -39,8 +51,7 @@
                 <li>Création d'une API avec Spring Boot pour la prédiction.</li>
                 <li>Intégration d'une interface utilisateur conviviale.</li>
             </ol>
-
-            <p><strong>Statut actuel :</strong> Précision du modèle à ~82% ✅</p>
+            <p class="status"><strong>Statut actuel :</strong> Précision du modèle à ~82% ✅</p>
         </section>
 
         <section class="form-section">

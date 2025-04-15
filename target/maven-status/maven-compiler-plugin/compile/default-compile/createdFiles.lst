@@ -1,0 +1,8 @@
+com\example\predictive_maintenance\PredictionController$PredictionRequest.class
+com\example\predictive_maintenance\PredictionController.class
+com\example\predictive_maintenance\App.class
+com\example\predictive_maintenance\CorsConfig.class
+com\example\predictive_maintenance\CorsConfig$1.class
+com\example\predictive_maintenance\HomeController.class
+com\example\predictive_maintenance\PredictionController$PredictionResponse.class
+com\example\predictive_maintenance\ModelService.class
