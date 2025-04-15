@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Maintenance Prédictive - Projet AI4I 2020</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Projet de Maintenance Prédictive 🔧🤖</h1>
+        <p>Amélioration de la fiabilité des machines industrielles grâce à l'IA.</p>
+
+        <img src="images/aaz.png" alt="Robot industriel" class="robot-image">
+        <figcaption>Illustration : Machine industrielle surveillée par des capteurs IoT pour la maintenance prédictive.</figcaption>
+        <section class="description">
+            <h2>Problématique du Projet</h2>
+            <p>Les arrêts imprévus des équipements industriels peuvent coûter des millions d'euros par an.
+            Notre objectif est d’anticiper les défaillances grâce à l'analyse des données collectées en temps réel sur la machine :</p>
+            <ul>
+                <li>Température de l'air ambiant</li>
+                <li>Température du processus</li>
+                <li>Vitesse de rotation de l'équipement</li>
+                <li>Couple appliqué</li>
+                <li>Usure de l'outil</li>
+                <li>Type de produit fabriqué</li>
+            </ul>
+
+            <h2>Visualisations</h2>
+            <img src="images/pie_chart.png" alt="Répartition des défauts">
+            <figcaption>Illustration : Répartition des défauts</figcaption>
+            <img src="images/accuracy_progression.png" alt="Progression de la précision">
+            <figcaption>Illustration : Progression de la précision</figcaption>
+            <h2>Étapes du Projet</h2>
+            <ol>
+                <li>Analyse initiale et détection d'un déséquilibre dans les classes.</li>
+                <li>Prétraitement des données & équilibrage.</li>
+                <li>Entraînement d'un modèle de régression logistique.</li>
+                <li>Création d'une API avec Spring Boot pour la prédiction.</li>
+                <li>Intégration d'une interface utilisateur conviviale.</li>
+            </ol>
+
+            <p><strong>Statut actuel :</strong> Précision du modèle à ~82% ✅</p>
+        </section>
+
+        <section class="form-section">
+            <h2>Testez votre prédiction</h2>
+            <form id="predictForm">
+                <label>Température de l'air (K)</label>
+                <input type="number" id="airTemperature" step="0.1" required>
+
+                <label>Température du processus (K)</label>
+                <input type="number" id="processTemperature" step="0.1" required>
+
+                <label>Vitesse de rotation (RPM)</label>
+                <input type="number" id="rotationalSpeed" step="0.1" required>
+
+                <label>Couple appliqué (Nm)</label>
+                <input type="number" id="torque" step="0.1" required>
+
+                <label>Usure de l'outil (min)</label>
+                <input type="number" id="toolWear" step="0.1" required>
+
+                <label>Type de produit (encodé : 0, 1, 2...)</label>
+                <input type="number" id="typeEncoded" required>
+
+                <button type="submit">Prédire 🔍</button>
+            </form>
+
+            <h3>Résultat : <span id="result"></span></h3>
+        </section>
+    </div>
+
+    <script>
+        document.getElementById('predictForm').onsubmit = async function(event) {
+            event.preventDefault();
+            const response = await fetch('/predict', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    airTemperature: parseFloat(document.getElementById('airTemperature').value),
+                    processTemperature: parseFloat(document.getElementById('processTemperature').value),
+                    rotationalSpeed: parseFloat(document.getElementById('rotationalSpeed').value),
+                    torque: parseFloat(document.getElementById('torque').value),
+                    toolWear: parseFloat(document.getElementById('toolWear').value),
+                    typeEncoded: parseInt(document.getElementById('typeEncoded').value)
+                })
+            });
+            const data = await response.json();
+            document.getElementById('result').textContent = data.prediction;
+        };
+    </script>
+</body>
+</html>
